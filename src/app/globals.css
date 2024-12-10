@@ -7,7 +7,30 @@
   --foreground: #171717;
 }
 
+logo-text {
+  color: rgb(46 16 101 / var(--tw-divide-opacity));
+}
+
+.side-navigation{
+  max-width: 20%;
+  min-height: 100vh;
+  background: #F9FAFB;
+}
+
 @media (prefers-color-scheme: dark) {
+  .logo-text{
+    color: white;
+  }
+  body>nav {
+    background: #0d0d0d;
+    --foreground: #ffffff;
+  }
+  .side-navigation{
+    background: #0e0e0e;
+  }
+  .bg-gray-50{
+    background: #0e0e0e;
+  }
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
@@ -19,3 +42,12 @@ body {
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+main {
+  padding: 0 10px;
+}
+
+body>nav{
+  border-bottom: #8b8b8b;
+}
+
