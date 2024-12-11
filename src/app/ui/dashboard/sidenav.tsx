@@ -14,7 +14,7 @@ const links = [
   { name: "Profile", href: "/dashboard/profile" },
 ];
 
-export default async function SideNav() {
+export default function SideNav() {
 
   return (
     <main className="bg-gray-50 min-h-screen">

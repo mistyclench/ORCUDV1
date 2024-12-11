@@ -1,11 +1,22 @@
 // components/CallToActionCard.js
 
-import React from 'react';
+import React from "react";
 
-const CallToActionCard = ({ title, backgroundColor, url }) => {
+const CallToActionCard = ({ title, description, backgroundColor, url }) => {
   return (
-    <div href={url} style={{ backgroundColor, padding: '20px', margin: '10px 10px', borderRadius: '5px', width:'45%', color:'white' }}>
+    <div
+      href={url}
+      style={{
+        backgroundColor,
+        padding: "20px",
+        margin: "10px 10px",
+        borderRadius: "5px",
+        width: "45%",
+        color: "white",
+      }}
+    >
       <h1>{title}</h1>
+      <small>{description}</small>
     </div>
   );
 };
