@@ -11,7 +11,7 @@ import {
   Legend,
 } from 'chart.js';
 import { Line } from 'react-chartjs-2';
-import { faker } from '@faker-js/faker';
+import { faker } from "@faker-js/faker";
 
 ChartJS.register(
   CategoryScale,
@@ -31,36 +31,30 @@ export const options = {
     },
     title: {
       display: true,
-      text: 'Chart.js Line Chart',
+      text: 'Claim Report',
     },
   },
 };
 
-const labels = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
+const labels = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 
 // ... rest of the code
+const datasets =     [...Array(10)].map((_, index) => {
+  return {
+    label: faker.company.name(),
+    data: labels.map (() =>Array(7).fill(null).map(() => faker.number.int({ min: -1000, max: 1000 }))),
+    backgroundColor: `rgba(${faker.number.int({ min: 0, max: 255 })}, ${faker.number.int({ min: 0, max: 255 })}, ${faker.number.int({ min: 0, max: 255 })}, 0.5)`,
+    borderColor: `rgba(${faker.number.int({ min: 0, max: 255 })}, ${faker.number.int({ min: 0, max: 255 })}, ${faker.number.int({ min: 0, max: 255 })}, 1)`,
+    borderWidth: 1,
+    pointRadius: 0,
+    key: index,
+
+  };
+})
+
 export const data = {
   labels,
-  datasets: [
-    {
-      label: 'Kasapreko PLC',
-      data: labels.map(() => faker.number.int({ min: -1000, max: 1000 })),
-      borderColor: 'rgb(255, 99, 132)',
-      backgroundColor: 'rgba(255, 99, 132, 0.5)',
-    },
-    {
-      label: 'CAL BANK PLC',
-      data: labels.map(() => faker.number.int({ min: -1000, max: 1000 })),
-      borderColor: 'rgb(53, 162, 235)',
-      backgroundColor: 'rgba(53, 162, 235, 0.5)',
-    },
-    {
-      label: 'GCB GHANA PLC',
-      data: labels.map(() => faker.number.int({ min: -1000, max: 1000 })),
-      borderColor: 'rgb(255, 255, 0)',
-      backgroundColor: 'rgba(255, 255, 0, 0.5)',
-    },
-  ],
+  datasets: datasets
 };
 
 

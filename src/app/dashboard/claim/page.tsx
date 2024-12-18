@@ -1,3 +1,4 @@
+import Wizard from "@/components/wizard";
 import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
 
 export default async function Claim() {
@@ -8,10 +9,10 @@ export default async function Claim() {
 
   return (
     <main>
-        <h1>Claim Page</h1>
         <p>Welcome {user?.given_name}!</p>
         <p>Your roles: {roles?.join(", ")}</p>
         <p>Your permissions: {JSON.stringify(permissions?.permissions)}</p>
+        <Wizard/>
   
     </main>
   )

@@ -82,7 +82,7 @@ export default async function RootLayout({
                   </Link>
                 );
               })}
-            {isAuthed ? (<LogoutLink className="px-4 hover:bg-sky-100 hover:text-blue-600">Logout</LogoutLink>): (<LoginLink className="px-4 hover:bg-sky-100 hover:text-blue-600">Login</LoginLink>)}
+            {isAuthed ? (<button className="btn-xs bg-transparent border-red-700 text-red-700 font-semibold hover:text-white py-0 px-4 border border-red-700 hover:border-transparent rounded-full"><LogoutLink className="px-4 text-red-700 hover:bg-red-700 hover:text-white hover:border-red-700 rounded-full">Logout</LogoutLink></button>): (<button className="btn-xs bg-transparent border-teal-400 text-teal-400 font-semibold hover:text-white py-0 px-4 border border-teal-400 hover:border-transparent rounded-full"><LoginLink className="px-4 text-teal-400 hover:text-white hover:bg-teal-400 rounded-full">Login</LoginLink></button>)}
             </div>
           </nav>
           {children}

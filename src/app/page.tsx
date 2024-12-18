@@ -1,8 +1,6 @@
 import Image from "next/image";
-import CallToActionCard from "../components/CallToActionCard";
 import truncateText from "../app/utils";
 import { articles, singleArticle } from "../utils/articles";
-import { LoginLink } from "@kinde-oss/kinde-auth-nextjs/components";
 
 export default function Home() {
   return (
@@ -28,26 +26,6 @@ export default function Home() {
           </div>
         );
       })}
-
-      <div className="flex flex-row w-70 mx-auto">
-        <LoginLink>
-          <CallToActionCard
-            title="CLAIM YOUR DIVIDENDS"
-            description="Explore a wide range of services that cater to your needs."
-            backgroundColor="orange"
-            url="/login"
-          />
-        </LoginLink>
-
-        <LoginLink>
-          <CallToActionCard
-            title="TRANSFER UNCLAIMED DIVIDENDS"
-            description="Stay updated with the latest news and updates by subscribing to our newsletter."
-            backgroundColor="violet"
-            url="/login"
-          />
-        </LoginLink>
-      </div>
 
       <div className="flex flex-wrap">
         {articles.map((article) => {
