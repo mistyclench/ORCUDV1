@@ -20,29 +20,30 @@ const Wizard = () => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault(); // Prevent default form submission behavior
-    
-    // Simulating a simple submission logic
-    try {
-      const response = await fetch('/api/submit', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData), // Send form data as JSON
-      });
+//   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+//     event.preventDefault(); // Prevent default form submission behavior
 
-      if (response.ok) {
-        alert('Form submitted successfully!');
-      } else {
-        alert('Error submitting form.');
-      }
-    } catch (error) {
-      console.error('Error submitting form:', error);
-      alert('Error submitting form.');
-    }
-  };
+//     // Simulating a simple submission logic
+//     try {
+//       const response = await fetch('/api/submit', {
+//         method: 'POST',
+//         headers: {
+//           'Content-Type': 'application/json',
+//         },
+//         body: JSON.stringify(formData), // Send form data as JSON
+//       });
+
+//       if (response.ok) {
+//         alert('Form submitted successfully!');
+//       } else {
+//         alert('Error submitting form.');
+//       }
+//     } catch (error) {
+//       console.error('Error submitting form:', error);
+//       alert('Error submitting form.');
+//     }
+//   };
+
 
 //   async function handleSubmit (e: React.FormEvent<HTMLFormElement>){
 //     e.preventDefault();
@@ -59,7 +60,14 @@ const Wizard = () => {
 //      console.log(data);
 //   };
 
-
+const handleSubmit: () => void = () => {
+    // Logic to simulate form submission without using the event directly
+    console.log('Button clicked: form submission logic executed');
+    
+    // For instance, call your form validation or API submission logic here
+    // handleFormData();
+  };
+  
   return (
     <div className="max-w-md mx-auto p-4">
       <h1 className="text-2xl font-bold mb-4">Multistep Wizard</h1>
